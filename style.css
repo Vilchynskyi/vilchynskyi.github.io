@@ -208,14 +208,13 @@ i {
     position: relative;
     border-bottom: 1px solid white;
     margin-bottom: 15px;
-    text-align: center;
-    position: relative;
+    line-height: 180px;
+	text-align: center;
 }
-.product_logo img {
-    position: absolute; 
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%);
+.product_logo > div {
+    display: inline-block; /* центрировать..*/
+    vertical-align: middle;  /* ..по вертикали */
+    line-height: 1.25; /* переопределить высоту строки на обычную */
 }
 .square {
     position: absolute;
