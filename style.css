@@ -250,8 +250,10 @@ i {
     background-color: #2c71b8;
     background-image: url('demoShop/white_like.png');
 }
-.product_name {
+.product_body {
     padding-left: 15px;
+}
+.product_name {
     color: white;
     font-size: 30px;
     font-weight: bold;
@@ -259,16 +261,13 @@ i {
     width: 100%;
 }
 .product_description {
-    padding-left: 15px;
     color: white;
     font-weight: lighter;
     font-size: 21px;
     margin-bottom: 20px;
     width: 100%;
-
 }
 .product_characteristics {
-    padding-left: 18px;
     color: white;
     font-size: 18px;
     font-weight: lighter;
