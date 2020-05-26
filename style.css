@@ -12,11 +12,20 @@ body {
 .col-md-3 {
     width: 25.65%;
 }
+.col-md-4 {
+    width: 34.51%;
+}
 .col-md-6 {
     width: 48.7%;
 }
+.col-md-8 {
+    width: 65.45%;
+}
 .col-md-9 {
     width: 74.35%;
+}
+.col-md-12 {
+    width: 100%;
 }
 [class*="col-"] {
     float: left;
@@ -27,7 +36,9 @@ body {
     display: block;
 }
 
+
 /* Header */
+
 
 .header {
     background-color: rgba(255, 255, 255, 0.75);
@@ -162,18 +173,12 @@ i {
     text-align: center;
 }
 
+
 /* Main */
-.subcol-md-3 {
-    width: 34.51%;
-}
-.subcol-md-6 {
-    width: 65.45%;
-}
-.subcol-md-9 {
-    width: 100%;
-}
-.subcol-md-6, .subcol-md-3 {
-    float: left;
+
+
+.main {
+    margin-bottom: 70px;
 }
 .bread_crumbs {
     color: rgba(255, 255, 255, 0.5);
@@ -216,7 +221,7 @@ i {
     vertical-align: middle;  /* ..по вертикали */
     line-height: 1.25; /* переопределить высоту строки на обычную */
 }
-.square {
+.lightbox {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -228,7 +233,7 @@ i {
     background-repeat: no-repeat;
     background-position: 4px;
 }
-.square:hover {
+.lightbox:hover {
     cursor: pointer;
     background-color: #2c71b8;
     background-image: url('demoShop/white_sqr.png');
@@ -312,9 +317,33 @@ i {
     margin: auto;
     background-color: #2c71b8;
 }
+.product_buttons button:hover {
+    background-color: rgba(255, 255, 255, 0.75);
+    color: #2c71b8;
+}
 .add_btn button{
     background-color: rgba(255, 255, 255, 0.2);
     background-image: url('demoShop/white\ cart.png');
     background-repeat: no-repeat;
     background-position: 168px 13px;
+}
+.add_btn button:hover {
+    background-image: url('demoShop/blue_cart.png');
+    background-repeat: no-repeat;
+    background-position: 168px 13px;
+}
+
+
+/* Footer */
+
+
+.footer {
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+.copyright {
+    line-height: 100px;
+    color: #2c71b8;
+    text-align: center;
+    font-style: 18px;
 }
