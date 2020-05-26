@@ -180,6 +180,75 @@ i {
 .main {
     margin-bottom: 70px;
 }
+input[type="checkbox"] {
+    display: none;
+}
+.filter_label {
+    position: relative;
+}
+.filter_label:before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid white;
+    cursor: pointer;
+    position: absolute;
+    top: 6px;
+}
+.filter_label:before[text] {
+    margin-left: 5px;
+}
+.filter_checkbox span {
+    margin-left: 21px;
+}
+input[type="checkbox"]:checked + .filter_label:before {
+    background-color: white;
+}
+.filter_block {
+    width: 270px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-right: 1px solid white;
+    padding: 30px;
+    color: white;
+    font-size: 21px;
+}
+.filter_title {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.filter_device_type {
+    margin-bottom: 60px;
+}
+.filter_checkbox {
+    margin-top: 25px;
+}
+.filter_color {
+    margin-bottom: 60px;
+}
+.filter_ram {
+    margin-bottom: 30px;
+}
+.filter_more_options {
+    font-weight: 300;
+    font-size: 21px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.filter_submit input{
+    height: 50px;
+    width: 210px;
+    margin: 0 auto;
+    background-color: #2c71b8;
+    border: 1px solid white;
+    color: white;
+    font-weight: 700;
+    font-size: 21px;
+}
+.filter_submit input:hover {
+    background-color: rgba(255, 255, 255, 0.75);
+    color: #2c71b8;
+}
 .bread_crumbs {
     color: rgba(255, 255, 255, 0.5);
     font-size: 12px;
