@@ -403,13 +403,13 @@ input[type="checkbox"]:checked + .filter_label:before {
     background-color: rgba(255, 255, 255, 0.75);
     color: #2c71b8;
 }
-.add_btn button{
+.add_to_cart_btn button{
     background-color: rgba(255, 255, 255, 0.2);
     background-image: url('demoShop/white\ cart.png');
     background-repeat: no-repeat;
     background-position: 168px 13px;
 }
-.add_btn button:hover {
+.add_to_cart_btn button:hover {
     background-image: url('demoShop/blue_cart.png');
     background-repeat: no-repeat;
     background-position: 168px 13px;
