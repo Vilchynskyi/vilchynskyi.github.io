@@ -327,15 +327,27 @@ input[type="checkbox"]:checked + .filter_label:before {
     height: 30px;
     width: 30px;
     border: 1px solid #2c71b8;
-    background: none;
+    background-color: transparent;
     background-image: url('demoShop/blue_like.png');
     background-repeat: no-repeat;
-    background-position: 4px
+    background-position: center;
 }
 .like:hover {
     cursor: pointer;
     background-color: #2c71b8;
     background-image: url('demoShop/white_like.png');
+}
+.liked {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    height: 30px;
+    width: 30px;
+    border: 1px solid #2c71b8;
+    background-color: #2c71b8;
+    background-image: url('demoShop/white_like.png');
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .product_body {
     padding-left: 15px;
