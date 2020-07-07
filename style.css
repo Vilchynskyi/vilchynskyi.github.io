@@ -176,20 +176,62 @@ i {
 
 /* Slideshow */
 
-
-.slideshow {
-    height: 400px;
-    border-bottom: 1px solid white;
-    color: rgba(255, 255, 255, 0.5);
+.slick-dotted.slick-slider {
+    margin-bottom: 50px;
+}
+.slider_block > div {
+    color: white;
     font-size: 100px;
-    text-align: center;
+    font-weight: 300;
     line-height: 400px;
+    text-align: center;
+    font-size: 50px;
+}
+.slick-dots li button:before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border: 1px solid white;
+    opacity: 1;
+}
+.slick-slide {
+    width: 1110px;
+    margin-left: 30px;
+}
+.slick-dots li.slick-active button:before {
+    opacity: 1;
+    background-color: white;
+}
+.slick-prev {
+    left: 0;
+    z-index: 100000;
+}
+.slick-next {
+    right: 8px;
+}
+.slick-prev, .slick-next {
+    top: 48%;
+}
+.slick-prev:before, .slick-next:before {
+    font-size: 50px;
+    opacity: 1;
+}
+.slick-prev:before {
+    content: "<";
+}
+.slick-next:before {
+    content: ">";
 }
 
 
 /* Main */
 
 
+.main::before {
+    content: "";
+    display: block;
+    border-bottom: 1px solid white;
+}
 .main {
     margin-bottom: 70px;
 }
@@ -455,17 +497,45 @@ input[type="checkbox"]:checked + .filter_label:before {
     background-color: rgba(0, 0, 0, 0.3);
 }
 .modal_block {
-    width: 300px;
+    position: relative;
+    width: 400px;
     margin: 80px auto;
-    height: 200px;
+    height: auto;
     border: 1px solid grey;
     background-color: whitesmoke;
-    padding: 15px;
+    padding: 30px;
     box-sizing: border-box;
-    /* z-index: 100; */
 }
 .btn_close {
-    text-align: right;
+    position: absolute;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    top: 2%;
+    left: 96%;
+}
+.btn_close:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+.btn_please_call {
+    display: block;
+    color: white;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: normal;
+    border: 1px solid white;
+    height: 30px;
+    width: 150px;
+    margin: 25px auto 0;
+    background-color: #2c71b8;
+}
+.btn_please_call:hover {
+    background-color: rgba(255, 255, 255, 0.75);
+    color: #2c71b8;
+    border-color: #2c71b8;
     cursor: pointer;
 }
 .form_fields {
@@ -476,6 +546,9 @@ input[type="checkbox"]:checked + .filter_label:before {
     height: 30px;
     width: 100%;
 }
+
+
+
 .hide {
     display: none;
 }

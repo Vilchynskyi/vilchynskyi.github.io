@@ -25,11 +25,13 @@ let modal = document.querySelector(".modal")
 let closeBtn = document.querySelector(".btn_close")
 
 moreDetailsButtons.forEach(function(btn) {
-    btn.addEventListener("click", function () {
-        modal.classList.add("show")
-        modal.classList.remove("hide")
-    })
+    btn.addEventListener("click", openModal)
 })
+
+function openModal() {
+    modal.classList.add("show")
+    modal.classList.remove("hide")
+}
 
 function closeModal() {
     modal.classList.add("hide")
@@ -42,4 +44,23 @@ modal.addEventListener("click", function(e) {
     if (e.target === modal) {
         closeModal()
     }
+})
+
+
+// show modal by scroll
+
+function showModalByScrol() {
+    if (window.pageYOffset >= document.documentElement.scrollHeight / 2) {
+        openModal()
+        window.removeEventListener("scroll", showModalByScrol)
+    }
+}
+
+window.addEventListener("scroll", showModalByScrol)
+
+
+// slider
+
+$(".slider_block").slick({
+    dots: true,
 })
