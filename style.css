@@ -324,7 +324,7 @@ input[type="checkbox"]:checked + .filter_label:before {
 .product {
     border: 1px solid white;
     width: 270px;
-    height: 650px;
+    height: 670px;
     margin-bottom: 30px;
 }
 .margin-right {
@@ -392,7 +392,7 @@ input[type="checkbox"]:checked + .filter_label:before {
     background-position: center;
 }
 .product_body {
-    padding-left: 15px;
+    padding: 0 15px;
 }
 .product_name {
     color: white;
@@ -427,13 +427,44 @@ input[type="checkbox"]:checked + .filter_label:before {
     font-size: 45px;
     width: 100%;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 .product_price sup {
     font-size: 50%;
     vertical-align: 16px;
     padding-left: 10px;
     font-weight: 700;
+}
+.product_quantity_block {
+    width: max-content;
+    margin: 0 auto;
+}
+.product_quantity_block button {
+    background-color: #2c71b8;
+    outline: none;
+    border: 1px solid white;
+    color: white;
+    font-size: 21px;
+    height: 25px;
+    width: 25px;
+    padding: 0;
+    cursor: pointer;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.product_quantity_block button:hover {
+    background-color: rgba(255, 255, 255, 0.75);
+    color: #2c71b8;
+} 
+.product_quantity_input {
+    background-color: transparent;
+    width: 50px;
+    text-align: center;
+    border: none;
+    height: 25px;
+    outline: none;
+    color: white;
+    font-size: 20px;
 }
 .product_buttons {
     width: 100%;
