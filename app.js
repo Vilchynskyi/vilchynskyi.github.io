@@ -1,30 +1,22 @@
-// change product quantity
-
-let decreaseProductQuantityBtn = document.querySelectorAll(".decrease_quantity_btn")
-let increaseProductQuantityBtn = document.querySelectorAll(".increase_quantity_btn")
-let productQuantityInputs = document.querySelectorAll(".product_quantity_input")
-let productQuantityBlocks = document.querySelectorAll(".product_quantity_block")
-
-for (let i = 0; i < productQuantityBlocks.length; i++) {
-    let decreaseBtn = productQuantityBlocks[i].childNodes[1] //Here childNodes[1], it's a child decrease button of block with buttons and input
-    decreaseBtn.addEventListener("click", function() {
-        if (productQuantityBlocks[i].childNodes[3].value > 0) {
-            productQuantityBlocks[i].childNodes[3].value = +productQuantityBlocks[i].childNodes[3].value - 1
-        }
-    })
-    let increaseBtn = productQuantityBlocks[i].childNodes[5] //Here childNodes[5], it's a child increase button of block with buttons and input
-    increaseBtn.addEventListener("click", function() {
-        productQuantityBlocks[i].childNodes[3].value = +productQuantityBlocks[i].childNodes[3].value + 1
-    })
-}
-
-
 // add to cart
 
 let cartCounter = document.getElementById("cart_counter");
 let addToCartButtons = document.querySelectorAll(".add_to_cart_btn");
 
+let decreaseProductQuantityBtn = document.querySelectorAll(".decrease_quantity_btn")
+let increaseProductQuantityBtn = document.querySelectorAll(".increase_quantity_btn")
+let productQuantityInputs = document.querySelectorAll(".product_quantity_input")
+
+
 for (let i = 0; i < addToCartButtons.length; i++) {
+    decreaseProductQuantityBtn[i].addEventListener("click", function() {
+        if (productQuantityInputs[i].value > 0) {
+            productQuantityInputs[i].value = +productQuantityInputs[i].value - 1
+        }
+    })
+    increaseProductQuantityBtn[i].addEventListener("click", function() {
+        productQuantityInputs[i].value = +productQuantityInputs[i].value + 1
+    })
     addToCartButtons[i].addEventListener("click", function() {
         cartCounter.textContent = +cartCounter.textContent + +productQuantityInputs[i].value;
         productQuantityInputs[i].value = 1
