@@ -13,7 +13,7 @@ body {
     width: 25.65%;
 }
 .col-md-4 {
-    width: 34.51%;
+    width: 34.37%;
 }
 .col-md-6 {
     width: 48.7%;
@@ -318,6 +318,50 @@ input[type="checkbox"]:checked + .filter_label:before {
     color: white;
     margin-bottom: 50px;
 }
+.sort_block {
+    padding-left: 29px;
+}
+.selectize-control input {
+    color: transparent;
+    text-shadow: 0 0 0 #2c71b8;
+}
+.selectize-input.full, .selectize-input.items.has-options.full.has-items.focus.input-active.dropdown-active {
+    height: 40px;
+    padding: 10px 20px;
+    background-color: #2c71b8;
+    border: 1px solid white;
+    border-radius: 0;
+    color: white;
+    font-size: 21px;
+    font-weight: 300;
+    cursor: pointer;
+}
+.selectize-control.single .selectize-input:after, .selectize-control.single .selectize-input.dropdown-active:after {
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 4px;
+    margin: -6px 2px;
+    transform: rotate(45deg);
+}
+.selectize-dropdown-content .option {
+    height: 40px;
+    padding: 10px 20px;
+    background-color: #2c71b8;
+    color: white;
+    font-size: 21px;
+    font-weight: 300;
+    cursor: pointer;
+}
+.selectize-dropdown-content .option.active {
+    height: 40px;
+    padding: 10px 20px;
+    background-color: white;
+    color: #2c71b8;
+    font-weight: 300;
+    font-size: 21px;
+    cursor: pointer;
+}
 .products > div {
     float: left;
 }
@@ -455,6 +499,15 @@ input[type="checkbox"]:checked + .filter_label:before {
 .product_quantity_block button:hover {
     background-color: rgba(255, 255, 255, 0.75);
     color: #2c71b8;
+}
+button:disabled {
+    border-color: grey;
+    color: grey;
+}
+button:hover:disabled {
+    background-color: #2c71b8;
+    color: grey;
+    cursor: auto;
 } 
 .product_quantity_input {
     background-color: transparent;
@@ -465,6 +518,9 @@ input[type="checkbox"]:checked + .filter_label:before {
     outline: none;
     color: white;
     font-size: 20px;
+}
+.product_quantity_input:hover {
+    cursor: auto;
 }
 .product_buttons {
     width: 100%;

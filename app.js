@@ -9,13 +9,27 @@ let productQuantityInputs = document.querySelectorAll(".product_quantity_input")
 
 
 for (let i = 0; i < addToCartButtons.length; i++) {
-    decreaseProductQuantityBtn[i].addEventListener("click", function() {
-        if (productQuantityInputs[i].value > 0) {
-            productQuantityInputs[i].value = +productQuantityInputs[i].value - 1
+    function toggleBtnState(count) {
+        if (count <= 1) {
+            decreaseProductQuantityBtn[i].disabled = true
+        } else {
+            decreaseProductQuantityBtn[i].disabled = false
         }
+        if (count == 5) {
+            increaseProductQuantityBtn[i].disabled = true
+        } else {
+            increaseProductQuantityBtn[i].disabled = false
+        }
+    }
+    toggleBtnState(productQuantityInputs[i].value)
+
+    decreaseProductQuantityBtn[i].addEventListener("click", function() {
+        productQuantityInputs[i].value = +productQuantityInputs[i].value - 1
+        toggleBtnState(productQuantityInputs[i].value)
     })
     increaseProductQuantityBtn[i].addEventListener("click", function() {
         productQuantityInputs[i].value = +productQuantityInputs[i].value + 1
+        toggleBtnState(productQuantityInputs[i].value)
     })
     addToCartButtons[i].addEventListener("click", function() {
         cartCounter.textContent = +cartCounter.textContent + +productQuantityInputs[i].value;
@@ -23,7 +37,9 @@ for (let i = 0; i < addToCartButtons.length; i++) {
     })
 }
 
+
 // change like button state
+
 
 let likeButtons = document.querySelectorAll(".like");
 for (let i = 0; i < likeButtons.length; i++) {
@@ -77,4 +93,12 @@ window.addEventListener("scroll", showModalByScrol)
 
 $(".slider_block").slick({
     dots: true,
+})
+
+
+// sorting 
+
+$(".products_sort").selectize({
+    sortField: "text",
+    hideSelected: true,	
 })
