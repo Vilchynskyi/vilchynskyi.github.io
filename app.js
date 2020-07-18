@@ -21,6 +21,7 @@ for (let i = 0; i < addToCartButtons.length; i++) {
             increaseProductQuantityBtn[i].disabled = false
         }
     }
+    
     toggleBtnState(productQuantityInputs[i].value)
 
     decreaseProductQuantityBtn[i].addEventListener("click", function() {
@@ -34,6 +35,7 @@ for (let i = 0; i < addToCartButtons.length; i++) {
     addToCartButtons[i].addEventListener("click", function() {
         cartCounter.textContent = +cartCounter.textContent + +productQuantityInputs[i].value;
         productQuantityInputs[i].value = 1
+        toggleBtnState(productQuantityInputs[i].value)
     })
 }
 
