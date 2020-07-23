@@ -7,36 +7,50 @@ let decreaseProductQuantityBtn = document.querySelectorAll(".decrease_quantity_b
 let increaseProductQuantityBtn = document.querySelectorAll(".increase_quantity_btn")
 let productQuantityInputs = document.querySelectorAll(".product_quantity_input")
 
+// OOP 
 
-for (let i = 0; i < addToCartButtons.length; i++) {
-    function toggleBtnState(count) {
-        if (count <= 1) {
-            decreaseProductQuantityBtn[i].disabled = true
-        } else {
-            decreaseProductQuantityBtn[i].disabled = false
-        }
-        if (count == 5) {
-            increaseProductQuantityBtn[i].disabled = true
-        } else {
-            increaseProductQuantityBtn[i].disabled = false
-        }
+function Counter(decrementBtn, incrementBtn, inputField, addToCartBtn, cartCounter, minCount=1, maxCount=5) {
+    this.domRefs = {
+        decrementBtn,
+        incrementBtn,
+        inputField,
+        addToCartBtn,
     }
-    
-    toggleBtnState(productQuantityInputs[i].value)
+    this.cartCounter = cartCounter
+    console.log(this)
 
-    decreaseProductQuantityBtn[i].addEventListener("click", function() {
-        productQuantityInputs[i].value = +productQuantityInputs[i].value - 1
-        toggleBtnState(productQuantityInputs[i].value)
-    })
-    increaseProductQuantityBtn[i].addEventListener("click", function() {
-        productQuantityInputs[i].value = +productQuantityInputs[i].value + 1
-        toggleBtnState(productQuantityInputs[i].value)
-    })
-    addToCartButtons[i].addEventListener("click", function() {
-        cartCounter.textContent = +cartCounter.textContent + +productQuantityInputs[i].value;
-        productQuantityInputs[i].value = 1
-        toggleBtnState(productQuantityInputs[i].value)
-    })
+    this.toggleButtonState = function() {
+        let count = this.domRefs.inputField.value;
+        this.domRefs.incrementBtn.disabled = count >= maxCount
+        this.domRefs.decrementBtn.disabled = count <= minCount
+    }
+
+    this.toggleButtonState()
+
+    this.decrement = function () {
+        this.domRefs.inputField.value = +this.domRefs.inputField.value - 1
+        this.toggleButtonState()
+    }
+
+    this.increment = function () {
+        this.domRefs.inputField.value = +this.domRefs.inputField.value + 1
+        this.toggleButtonState()
+    }
+
+    this.addToCart = function () {
+        this.cartCounter.textContent = +this.cartCounter.textContent + +this.domRefs.inputField.value
+        this.domRefs.inputField.value = 1
+        this.toggleButtonState()
+    }
+
+    this.domRefs.decrementBtn.addEventListener("click", this.decrement.bind(this))
+    this.domRefs.incrementBtn.addEventListener("click", this.increment.bind(this))
+    this.domRefs.addToCartBtn.addEventListener("click", this.addToCart.bind(this))
+}
+
+
+for (let i=0; i < addToCartButtons.length; i++) {
+    counter = new Counter(decreaseProductQuantityBtn[i], increaseProductQuantityBtn[i], productQuantityInputs[i], addToCartButtons[i], cartCounter)
 }
 
 

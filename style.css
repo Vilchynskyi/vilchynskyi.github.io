@@ -238,6 +238,9 @@ i {
 input[type="checkbox"] {
     display: none;
 }
+.filter_label:hover {
+    cursor: pointer;
+}
 .filter_label {
     position: relative;
 }
@@ -303,6 +306,7 @@ input[type="checkbox"]:checked + .filter_label:before {
 .filter_submit input:hover {
     background-color: rgba(255, 255, 255, 0.75);
     color: #2c71b8;
+    cursor: pointer;
 }
 .bread_crumbs {
     color: rgba(255, 255, 255, 0.5);
@@ -543,6 +547,7 @@ button:hover:disabled {
 .product_buttons button:hover {
     background-color: rgba(255, 255, 255, 0.75);
     color: #2c71b8;
+    cursor: pointer;
 }
 .add_to_cart_btn button{
     background-color: rgba(255, 255, 255, 0.2);
